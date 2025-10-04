@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Waste-to-Energy — Heating Panels (Demo)</title>
+  <!-- Tailwind Play CDN (for quick demos) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/waste-to-energy.jpg" type="image/x-icon">
+  <style>
+    /* small custom styles */
+    .glass { backdrop-filter: blur(6px); background: rgba(255,255,255,0.06); }
+    .accent { background: linear-gradient(90deg,#06b6d4,#7c3aed); }
+    /* animated pulse for live-picture badge */
+    .pulse {
+      box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+      animation: pulse 2s infinite;
+      border-radius:9999px;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.6);} 
+      70% { box-shadow: 0 0 0 12px rgba(34,197,94,0);} 
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0);} 
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100">
+  <header class="sticky top-0 z-50 backdrop-blur-md glass border-b border-white/6">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full accent flex items-center justify-center text-white font-bold">W2E</div>
+        <div>
+          <h1 class="text-lg font-semibold">Waste → Energy:Using Heating Panels Demo</h1>
+          <p class="text-xs text-gray-300">Interactive single-file webpage (Tailwind + simple animations)</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 items-center text-sm text-gray-300">
+        <a href="#intro" class="hover:text-white transition">Intro</a>
+        <a href="#how" class="hover:text-white transition">How</a>
+        <a href="#materials" class="hover:text-white transition">Materials</a>
+        <a href="#diagram" class="hover:text-white transition">Diagram</a>
+        <a href="#conclusion" class="hover:text-white transition">Conclusion</a>
+      </nav>
+      <button id="toggleView" class="ml-4 px-3 py-1 rounded-md bg-white/6 hover:bg-white/10 transition text-sm">Toggle Presentation</button>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10 space-y-12">
+    <!-- Hero / Title -->
+    <section id="intro" data-aos="fade-up" class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-4xl font-extrabold leading-tight">Convert Waste into Useful Energy using Heating Panels</h2>
+        <p class="mt-4 text-gray-300">A compact project concept showing how heating panels can provide the thermal energy required to thermally treat waste and produce steam for electricity — perfect for a science-fair demonstration.</p>
+
+        <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-200">
+          <li class="p-3 glass rounded-md">♻️ Reduce landfill volume</li>
+          <li class="p-3 glass rounded-md">⚡ Produce heat & electricity</li>
+          <li class="p-3 glass rounded-md">🌱 Use agricultural or organic waste</li>
+          <li class="p-3 glass rounded-md">🔧 Small-scale experimental setup</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#materials" class="inline-block px-4 py-2 rounded-md bg-white/8 hover:bg-white/12 transition">Materials Needed</a>
+          <a id="demoBtn" class="inline-block px-4 py-2 rounded-md border border-white/10 hover:bg-white/6 cursor-pointer">Run Mini Demo</a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <!-- live picture from Unsplash (dynamic "live picture") -->
+        <figure class="rounded-2xl overflow-hidden shadow-2xl">
+          <img id="livePic" src="assets/waste-to-energy.jpg" alt="Live waste to energy" class="w-full h-72 object-cover transform hover:scale-105 transition" />
+          <figcaption class="p-4 bg-gradient-to-t from-black/60 to-transparent absolute bottom-0 left-0 w-full">
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="text-sm font-semibold">Live picture</div>
+                <div class="text-xs text-gray-300">Images served from google</div>
+              </div>
+              <div class="flex items-center gap-2">
+                
+                
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" data-aos="fade-right" class="space-y-6 p-6 glass rounded-xl">
+      <h3 class="text-2xl font-bold">How It Works — Step by Step</h3>
+      <div class="grid md:grid-cols-3 gap-6 mt-4">
+        <article class="p-4 rounded-md bg-white/6">
+          <h4 class="font-semibold">1. Waste Collection</h4>
+          <p class="text-sm text-gray-300 mt-2">Collect organic and combustible municipal waste — food scraps, paper, non-recyclable plastics.</p>
+        </article>
+        <article class="p-4 rounded-md bg-white/6">
+          <h4 class="font-semibold">2. Heating Chamber</h4>
+          <p class="text-sm text-gray-300 mt-2">Put fire in the chamber to heat the chamber to high temperatures (for pyrolysis / controlled combustion) — capture thermal energy.</p>
+        </article>
+        <article class="p-4 rounded-md bg-white/6"
+        <h4 class="font-semibold">3. Heating Panels</h4>
+        <p class="text-sm text-gray-300 mt-2">Heating panel absorb the heat to produce electricity and send the electricity to the battery.</p>
+
+        </article>
+      </div>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="p-4 rounded-md bg-white/6">
+          <h4 class="font-semibold">Emissions & Filters</h4>
+          <p class="text-sm text-gray-300 mt-2">Add basic scrubbers and filters (cyclone separator, activated carbon) to reduce particulates and gases.</p>
+        </div>
+        <div class="p-4 rounded-md bg-white/6">
+          <h4 class="font-semibold">Byproducts</h4>
+          <p class="text-sm text-gray-300 mt-2">Ash and biochar can be used as soil amendment or construction filler — test before use.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materials -->
+    <section id="materials" data-aos="fade-left" class="space-y-4">
+      <h3 class="text-2xl font-bold">Materials & Components</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <ul class="space-y-2 p-4 glass rounded-md">
+          <li>• Heating panels (solar thermal or electric heating mats)</li>
+          <li>• Insulated metal chamber (stainless steel recommended)</li>
+        
+        
+          <li>• Pipes, valves, pressure gauges</li>
+          <li>• Filters: cyclone, HEPA / fabric filter, activated carbon</li>
+        </ul>
+        <div class="p-4 glass rounded-md">
+          <h4 class="font-semibold">Safety Gear</h4>
+          <p class="text-sm text-gray-300 mt-2">Safety goggles, heat-resistant gloves, fire extinguisher, and proper ventilation are essential.</p>
+          <h4 class="mt-4 font-semibold">Estimated Budget (demo)</h4>
+          <p class="text-sm text-gray-300">Small demo: $120–$600 depending on panel type and generator choice.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagram -->
+    <section id="diagram" data-aos="zoom-in" class="p-6 glass rounded-xl">
+      <h3 class="text-2xl font-bold">Diagram & Flow</h3>
+      <div class="mt-6 grid md:grid-cols-3 gap-6 items-center">
+        <div class="col-span-2">
+          <!-- Simple SVG flow diagram -->
+          <svg viewBox="0 0 900 300" class="w-full h-56 bg-white/4 rounded-xl p-4">
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L9,3 z" fill="#fff" />
+              </marker>
+            </defs>
+            <rect x="30" y="30" width="160" height="80" rx="10" fill="#0ea5a3" opacity="0.9" />
+            <text x="110" y="75" fill="#022" font-weight="700" text-anchor="middle" font-size="16">Waste Input</text>
+
+            <rect x="260" y="30" width="180" height="80" rx="10" fill="#7c3aed" opacity="0.9" />
+            <text x="350" y="75" fill="#022" font-weight="700" text-anchor="middle" font-size="16">Heating Chamber</text>
+
+            <rect x="530" y="30" width="160" height="80" rx="10" fill="#06b6d4" opacity="0.9" />
+            <text x="610" y="75" fill="#022" font-weight="700" text-anchor="middle" font-size="16">Heating Panel</text>
+
+            <rect x="350" y="160" width="200" height="80" rx="10" fill="#f59e0b" opacity="0.95" />
+            <text x="450" y="205" fill="#022" font-weight="700" text-anchor="middle" font-size="16">Battery</text>
+
+            <!-- arrows -->
+            <line x1="190" y1="70" x2="260" y2="70" stroke="#fff" stroke-width="4" marker-end="url(#arrow)" />
+            <line x1="440" y1="70" x2="530" y2="70" stroke="#fff" stroke-width="4" marker-end="url(#arrow)" />
+            <line x1="610" y1="110" x2="450" y2="160" stroke="#fff" stroke-width="4" marker-end="url(#arrow)" />
+
+            <!-- byproduct arrow -->
+            <line x1="140" y1="110" x2="140" y2="220" stroke="#fff" stroke-width="2" stroke-dasharray="6" marker-end="url(#arrow)" />
+            <text x="140" y="240" fill="#fff" text-anchor="middle" font-size="12">Ash / Char</text>
+
+          </svg>
+        </div>
+        <div>
+          <div class="p-4 rounded-md bg-white/6">
+            <h4 class="font-semibold">Key Notes</h4>
+            <ul class="text-sm text-gray-300 mt-2 space-y-2">
+              <li>• Maintain controlled temperature to avoid toxic fumes.</li>
+              <li>• Use filters to protect the environment.</li>
+              <li>• Test outputs before using byproducts.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" data-aos="fade-up" class="p-6 glass rounded-xl">
+      <h3 class="text-2xl font-bold">Conclusion</h3>
+      <p class="mt-3 text-gray-300">Heating panels can be a practical heat source for small-scale waste-to-energy experiments. This demo is intended to explain the concept and present a safe, testable way to explore waste thermal conversion at school or for a prototype. Always prioritize safety and local regulations.</p>
+
+      <div class="mt-6 flex gap-3">
+        <a id="downloadHTML" class="px-4 py-2 rounded-md bg-white/8 hover:bg-white/12 cursor-pointer">Download HTML</a>
+        <a href="#" id="moreHelp" class="px-4 py-2 rounded-md border border-white/10">Ask for custom edits</a>
+      </div>
+    </section>
+
+    <footer class="py-8 text-center text-sm text-gray-400">Made for Science Fair 2025 — adapt & test responsibly. Images: Unsplash (live)</footer>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+
+    // Refresh live picture
+    document.getElementById('refreshPic').addEventListener('click', function(){
+      const img = document.getElementById('livePic');
+      // use query to get a slightly different image each time
+      img.src = 'https://source.unsplash.com/collection/8955393/800x600?sig=' + Date.now();
+    });
+
+    // Mini demo: animate diagram parts
+    document.getElementById('demoBtn').addEventListener('click', function(){
+      const svg = document.querySelector('#diagram svg');
+      if(!svg) return;
+      svg.style.transition = 'transform 0.6s ease';
+      svg.style.transform = 'scale(1.02)';
+      setTimeout(()=> svg.style.transform = '', 700);
+      // small toast
+      const t = document.createElement('div');
+      t.textContent = 'Mini demo: Steam flow simulated ✔';
+      t.className = 'fixed bottom-6 right-6 px-4 py-2 rounded-md glass text-sm';
+      document.body.appendChild(t);
+      setTimeout(()=> t.remove(), 2200);
+    });
+
+    // Toggle presentation mode (single-column slide-like view)
+    const toggle = document.getElementById('toggleView');
+    let pres = false;
+    toggle.addEventListener('click', ()=>{
+      pres = !pres;
+      if(pres){
+        document.querySelectorAll('main > section').forEach((s,i)=>{
+          s.style.display = 'none';
+        });
+        const first = document.querySelector('main > section');
+        if(first) first.style.display = 'block';
+        first.scrollIntoView({behavior:'smooth'});
+        toggle.textContent = 'Exit Presentation';
+        // let user click to cycle
+        let idx = 0;
+        document.body.addEventListener('click', function cycle(){
+          idx = (idx+1) % document.querySelectorAll('main > section').length;
+          document.querySelectorAll('main > section')[idx].style.display = 'block';
+          // hide others
+          document.querySelectorAll('main > section').forEach((s,si)=>{ if(si!==idx) s.style.display='none'; });
+        }, { once: true });
+      } else {
+        document.querySelectorAll('main > section').forEach((s)=> s.style.display = 'block');
+        toggle.textContent = 'Toggle Presentation';
+      }
+    });
+
+    // Download the displayed HTML (self-contained)
+    document.getElementById('downloadHTML').addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'waste-to-energy_heating-panels_demo.html';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+  </script>
+</body>
+</html>
